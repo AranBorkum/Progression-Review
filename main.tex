@@ -1,0 +1,22 @@
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Setting up the page format and importing all relevant packages 	%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\documentclass[11pt, twosides]{report}   	
+\usepackage{import} 
+\usepackage[utf8]{inputenc}
+\input{sections/packages.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Formatting the front page: Title, Author, etc...					%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
+\begin{document}
+%\maketitle
+
+\chapter{Introduction and Theory}
+\label{chap:intro}
+\input{sections/theory.tex}
+
+\end{document}
+
