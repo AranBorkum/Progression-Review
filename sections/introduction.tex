@@ -114,19 +114,42 @@ There is a dominant 9.8 MeV decay line for the excited Ar$^{*}$ which has a reas
 
 \section{Radiological backgrounds at DUNE}
 
+One must carefully consider the backgrounds in any experiment and that is no different for DUNE. 
+In the case of these low-energy, MeV scale neutrinos there are numerous backgrounds coming from intrinsic parts of the experimental design.
+These backgrounds include:
+\begin{itemize}
+\item Ionising particles emitted during the U/Th chain coming from the concrete around the detector and the rock surrounding the cavern;
 
+\item Ionising particles coming from naturally occurring Radon in the air;
 
+\item decay products of $^{42}$Ar and $^{39}$Ar in the liquid argon volume;
 
+\item Neutrons of various energies coming from the surrounding rock and concrete,
+\end{itemize}
 
+\noindent as well as various other backgrounds, all of which must be carefully dealt with.
+It is the neutron backgrounds that will be discussed in more detail as they pertain to the work described in this report.
 
+Neutrons present as a dominant background in low energy neutrino detection.
+They are produced in $(\alpha, n)$ reactions as a result of the daughter decays of $^{238}$U and $^{232}$Th, as well as sub-dominantly from the spontaneous fission of $^{238}$U.
 
+It is unlikely for a non-thermal neutron to capture on Argon, and so neutrons tend to elastically scatter around within the volume of liquid Argon.  
+They can travel for a few meters, after which they will either escape the detector or capture on the Argon.
+There are two very specific energies associated with neutron capture on argon.
+These are 6.1 MeV for capture on $^{40}$Ar and 8.8 MeV for capture on $^{37}$Ar.
+These energies refer to the sum of the energies of the photon emissions during the de-excitation of $^{40}$Ar$^{*}$ and $^{37}$Ar$^{*}$ respectively.
+The energy levels of the excited Argon atoms after neutron capture if shown in Figure \ref{fig:neutron-gamma}
 
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/n-cap-on-ar.png} 
+   \caption{Energy levels of $^{40}$Ar (left) and $^{37}$Ar (right) after capture of a thermal neutron \cite{hardell1970thermal}.}
+   \label{fig:neutron-gamma}
+\end{figure}
 
-
-
-
-
-
+\noindent These photons can then Compton scatter and pair produce as one would expect. 
+The difficulty with mitigating neutron backgrounds is that one cannot simple apply a fiducial volume cut on the detector because of how far neutron travel in liquid Argon.
+Instead shielding based approaches must be explored in order to lower the background rate.
 
 
 

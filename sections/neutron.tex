@@ -1,1 +1,37 @@
 \section{Neutron background studies}
+
+In order to understand the neutron capture rate on LAr in the DUNE far detector, a radiological generator was implemented such that a truth level study could be conducted.
+This involves some key factors that need to be understood.
+Perhaps most importantly the energy spectrum of neutrons being simulated needs to accurately represent that found in the Homestake mine in South Dakota (the site of the far detector).
+This energy spectrum has to represent neutrons produced by both Uranium and Thorium, including both spontaneous fission and $(\alpha, n)$ reactions.
+Fortunately, this is a well know spectrum and is displayed in Figure \ref{fig:neutron-spectrum}.
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/neutron-spectrum.png} 
+   \caption{Energy spectrum for radiological neutrons found in the Homestake Mine, South Dakota.}
+   \label{fig:neutron-spectrum}
+\end{figure}
+
+We see from the distribution that the energy peaks at $\sim 1$ MeV and $\sim 4.5$ MeV.
+An interesting thing to notice is the choice of units on the y-axis of the plot. 
+The rate given is in terms of exposure time to a volume of liquid argon, so the mass in the units refers to a mass of liquid argon. 
+
+Using this spectrum neutrons were generated in one centimetre thick "slabs" on all six sides of one dune far detector module.
+The transport of these particles through the various media in the detector is handled by a pre-existing GEANT4 based module that is preconfigured for a far detector module.
+In order to have high enough statistics for the study, 10000 neutrons were generated for the analysis.
+Additionally, other neutron spectra were used in the generation step in order to have a comparison of rates.
+These spectra are shown in Figure \ref{fig:allspectra}
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/AllNeutronSpectra.png} 
+   \caption{Plot showing the rates of production of various neutron energies from three different spectra. The light blue is that shown in Figure \ref{fig:neutron-spectrum}, the black line is the sum of the blue and red lines which are the Thorium and Uranium spectra respectively from SOURCES4 and the dashed black line is the spectrum implemented in FLUKA by collaborators in Ohio State University.}
+   \label{fig:allspectra}
+\end{figure}
+
+The analysis procedure is fairly simple, count the number of neutrons that capture within the volume of the cryostat.
+This is under the assumption that the capture will be on Argon if occurring within the cryostat, and not on another material.
+Then using the fact that we know how many neutrons we started with calculate the rate of capture for the particular energy spectrum.
+In order to go from number of captures to a rate of capture the following transformation is applied
+

@@ -12,9 +12,15 @@
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 
 \begin{document}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+% Formatting the front page: Title, Author, etc...					%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
+
 %\maketitle
 \tableofcontents
 \newpage
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
 % Introduction to DUNE, SN neutrinos and radiologicals 			%
@@ -30,24 +36,11 @@
 \label{sec:neutron}
 \input{sections/neutron.tex}
 
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Discussion of my plans for with in the future					%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-
-\label{sec:plan}
-\input{sections/plan.tex}
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-% Formatting the bibliography; constructed using bibtex 		 	%
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -	%
-
 \clearpage
 \bibliographystyle{ieeetr}
-\bibliography{Bibliography}
-
-
+\addcontentsline{toc}{chapter}{Bibliography} 
+\bibliography{bibliography}
 
 
 
 \end{document}
-
