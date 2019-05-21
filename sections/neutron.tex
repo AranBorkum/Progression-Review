@@ -8,7 +8,7 @@ Fortunately, this is a well know spectrum and is displayed in Figure \ref{fig:ne
 
 \begin{figure}[h] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=0.8\textwidth]{figures/neutron-spectrum.png} 
+   \includegraphics[width=0.7\textwidth]{figures/neutron-spectrum.png} 
    \caption{Energy spectrum for radiological neutrons found in the Homestake Mine, South Dakota.}
    \label{fig:neutron-spectrum}
 \end{figure}
@@ -25,13 +25,55 @@ These spectra are shown in Figure \ref{fig:allspectra}
 
 \begin{figure}[h] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=0.8\textwidth]{figures/AllNeutronSpectra.png} 
-   \caption{Plot showing the rates of production of various neutron energies from three different spectra. The light blue is that shown in Figure \ref{fig:neutron-spectrum}, the black line is the sum of the blue and red lines which are the Thorium and Uranium spectra respectively from SOURCES4 and the dashed black line is the spectrum implemented in FLUKA by collaborators in Ohio State University.}
+   \includegraphics[width=0.7\textwidth]{figures/AllNeutronSpectra.png} 
+   \caption{Plot showing the rates of production of various neutron energies from three different spectra. The light blue is that shown in Figure \ref{fig:neutron-spectrum}, the black line is the sum of the blue and red lines which are the Thorium and Uranium spectra respectively from SOURCES4 and the dashed black line is the spectrum from NeuCBOT.}
    \label{fig:allspectra}
 \end{figure}
 
 The analysis procedure is fairly simple, count the number of neutrons that capture within the volume of the cryostat.
 This is under the assumption that the capture will be on Argon if occurring within the cryostat, and not on another material.
-Then using the fact that we know how many neutrons we started with calculate the rate of capture for the particular energy spectrum.
-In order to go from number of captures to a rate of capture the following transformation is applied
+See Figure \ref{fig:captures} for a visual explanation of this requirement.
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/captures.png} 
+   \caption{Each dot in this plot represents the point of individual neutron captures. The solid black line is the border of the cryostat, therefore it is safe to assume that the captures within that black box are on argon. Everything outside of that box will be on iron and other elements. The lighter region at the top of the black box is the gaseous argon that rises to the top of the cryostat.}
+   \label{fig:captures}
+\end{figure}
+
+Then using the fact that we know how many neutrons we started with, calculate the rate of capture for the particular energy spectrum.
+In order to go from number of captures to a rate of capture the following transformation is applied:
+\begin{equation}
+\textrm{Rate} = \frac{\textrm{Number of captures}}{\textrm{Number of particles generated} \times 4.492 \textrm{ms}}
+\end{equation}
+
+\noindent where 4.492 ms is the time window within which the neutrons are generated. 
+This is chosen as it is twice the length of a standard drift window.
+
+We calculated that the neutron capture rate in a full 10kt far detector module, given the generator used, is expected to be around 125 Hz.
+When compared to that of the other spectra used, the results were quite similar. 
+The rate calculated for the dashed black spectrum in Figure \ref{fig:allspectra} was 130 Hz and that for the solid black spectrum was 101 Hz.
+We see that the results of NeuCBOT and our own are quite close to one another which is a good indicator that the calculations were done properly. 
+The reason for this being that the NeuCBOT value is a replication of the value shown in \cite{capozzi2018dune} using the DUNE specific generation techniques and software.
+
+
+Whether or not the value calculated implies that the neutron capture background rate is manageable or not is not clear. 
+Further testing is required to see to what extent this background rate can be reduced.
+Currently, the planned test include experimentation with water shielding as it is known that water is very effective at absorbing neutrons.
+Additionally, the construction of a workspace geometry within the overall detector module is being considered.
+This approach could potentially reveal if different areas of the detector require more or less surveillance in the presence of given backgrounds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
